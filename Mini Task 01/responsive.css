@@ -1,0 +1,75 @@
+@media (max-width: 768px) {
+    /* 1. Page ko scrollable banayein */
+    html, body {
+        overflow-y: auto; 
+    }
+
+    .hero-container {
+        flex-direction: column; /* Text upar, Image niche */
+        height: auto;
+        min-height: 100vh;
+        padding: 120px 20px 0; /* Header ke liye top padding */
+        background: #fbc02d; /* Mobile par clean solid yellow */
+        justify-content: flex-start;
+        display: flex;
+    }
+
+    /* 2. Text Section Adjustment */
+    .hero-left {
+        width: 100%;
+        text-align: center;
+        padding-left: 0;
+        margin-bottom: 20px;
+    }
+
+    .hero-left h1 {
+        font-size: 40px; /* Mobile ke liye perfect size */
+        line-height: 1.1;
+    }
+
+    .hero-left .description {
+        max-width: 100%;
+        padding-right: 0;
+        margin: 0 auto 25px;
+        font-size: 16px;
+    }
+
+    .hero-left button {
+        margin: 0 auto;         /* Agar flex kaam na kare toh margin auto center kar dega */
+        width: fit-content;     /* Button utna hi rahega jitna text hai */
+        display: block;
+    }
+
+    /* 3. Image Fix (Width aur Height Control) */
+    .hero-right {
+        width: 100%;
+        /* Screen ke POV se image ki height fix karein */
+        height: 45vh; 
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        position: relative;
+        margin-top: auto; /* Image ko screen ke bottom par chipkane ke liye */
+    }
+
+    .taau-img {
+        position: relative;
+        left: 0; /* Left/Right se cut-off khatam */
+        height: 100%; /* Hero-right ki height follow karega */
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .taau-img img {
+        height: 100%; /* Vertical height limit mein rahegi */
+        width: auto;  /* Aspect ratio kharab nahi hoga */
+        max-width: 90%; /* Side se thoda gap rakhne ke liye */
+        object-fit: contain; /* Sabse zaruri: image cut nahi hogi */
+    }
+
+    /* Dots ko mobile par hide kardein */
+    .nav-dots {
+        display: none;
+    }
+}
