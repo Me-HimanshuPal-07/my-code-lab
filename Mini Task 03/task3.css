@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background-color: #000000;
+}
+
+.main-header {
+    background-color: aliceblue;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 40px;
+}
+
+.brand-name {
+    background-color: aqua;
+    font-size: 24px;
+    font-family: baloo;
+}
+
+.nav-bar {
+    
+    background-color: aqua;
+}
+
+.signin-out {
+    background-color: aqua;
+}

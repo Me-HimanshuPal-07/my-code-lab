@@ -1,0 +1,48 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body { background: #0d1117; }
+
+header {
+  background: tomato;        /* ← seedha color — sirf box dikhana hai */
+  height: 80px;
+}
+
+.hero-section {
+  background: steelblue;
+  height: 500px;
+  display: flex;             /* ← left aur right side by side */
+}
+
+.hero-left {
+  background: orange;
+  flex: 1;                   /* ← aadhi jagah */
+}
+
+.hero-right {
+  background: purple;
+  flex: 1;
+  display: ____;     /* cards side by side karne ke liye */
+  gap: ____;         /* cards ke beech space */
+  padding: ____;     /* andar se thoda space */
+}
+
+.card {
+  background: ___;   /* koi bhi alag color */
+  flex: ____;        /* teeno cards equal size */
+  height: ____;      /* koi bhi height */
+}
+
+.products-row {
+  background: green;
+  height: 300px;
+}
+
+.features {
+  background: pink;
+  height: 150px;
+}
+
+footer {
+  background: yellow;
+  height: 80px;
+}
