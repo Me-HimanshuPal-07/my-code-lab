@@ -1,0 +1,72 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Baloo 2', sans-serif;
+  background-color: #f8f9fa;
+  color: #000000;
+  padding: 2rem;
+}
+
+.playground-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.main-heading {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.control-panel {
+  display: flex;
+  margin-bottom: 1.5rem;
+}
+
+.btn {
+  font-family: 'Baloo 2', sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: #007bff; /* Premium Blue match from layout */
+  color: #ffffff;
+  transition: transform 0.1s ease, filter 0.2s ease;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn:hover {
+  filter: brightness(0.9);
+}
+
+.divider {
+  border: 0;
+  height: 1px;
+  background: #ccc;
+  margin-bottom: 2rem;
+}
+
+.boxes-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.box {
+  background-color: #ffffff;
+  padding: 1.5rem 2rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  border-radius: 8px;
+  border-left: 8px solid #007bff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
