@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Student Registration Form</h1>
+    <br /><br />
+
+    <form action="">
+      <fieldset>
+        <legend>Personal Details</legend>
+        <br /><br />
+
+        <label for="name">Name</label><br />
+        <input type="text" placeholder="name" id="name" required /><br /><br />
+        <label for="email">Email</label><br />
+        <input
+          type="text"
+          placeholder="email"
+          id="email"
+          required
+        /><br /><br />
+        <label for="mobile">Mobile</label><br />
+        <input
+          type="text"
+          placeholder="mobile"
+          id="mobile"
+          required
+        /><br /><br />
+      </fieldset>
+      <br /><br />
+      <fieldset>
+        <legend>Address Details</legend>
+        <br /><br />
+        <label for="addressline1">Address Line 1</label><br />
+        <textarea id="addressline1" rows="3" cols="50"></textarea><br /><br />
+        <label for="city">City</label><br />
+        <select id="city">
+          <option value="meerut">Meerut</option>
+          <option value="meerut">Muzaffarnagar</option>
+          <option value="meerut">Sharanpur</option>
+          <option value="meerut">Shamli</option></select
+        ><br /><br />
+        <label for="state">State</label><br />
+        <select id="state">
+          <option value="uttarpradesh">Uttar Pradesh</option></select
+        ><br /><br />
+        <label for="country">Country</label><br />
+        <select id="country">
+          <option value="india">India 🇮🇳</option></select
+        ><br /><br />
+      </fieldset>
+      <br><br>
+      <label for="course">Select Course</label><br>
+      <select id="course">
+        <optgroup label="Frontend">
+            <option value="html">Html</option>
+        <option value="css">Css</option>
+        <option value="javascript">JavaScript</option>
+        </optgroup>
+        <optgroup label="Backend">
+            <option value="node.js">Node.js</option>
+            <option value="express.js">Express.js</option>
+            <option value="nest.js">Nest.js</option>
+        </optgroup>
+      </select>
+      <br><br>
+      <button>Submit Form</button>
+    </form>
+  </body>
+</html>
