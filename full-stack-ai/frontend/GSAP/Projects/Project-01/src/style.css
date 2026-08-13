@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Gravitas+One&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body{
+  height: 100%;
+  width: 100%;
+}
+/*===Loder==*/
+.loder{
+  height: 100vh;
+  width: 100%;
+  background-color: rgb(33, 54, 89, 0.98);
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+.loder-count h2{
+  font-size: 50px;
+  color: rgba(239, 162, 99, 0.468);
+  font-family: "Gravitas One", serif;
+  font-weight: 400;
+} 
+
+/*===HERO-SECTION===*/
+.hero-section{
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.hero-bg{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 0;
+}
+.hero-bg img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
