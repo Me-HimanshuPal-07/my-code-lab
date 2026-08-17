@@ -1,0 +1,238 @@
+/* ==========================================================================
+   1. GLOBAL RESET & BASE SETTINGS
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #080300; /* Pure deep space black */
+    color: #ffffff;
+    font-family: 'Baloo 2', cursive;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden; /* Strict Screen Freeze - No scrollbars allowed */
+}
+
+p, a, button, .tag1, .nav-bar a , .location, .category {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* ==========================================================================
+   2. MAIN HEADER (ScaleX Premium Floating Navbar)
+   ========================================================================== */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 40px 5%; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.brand-name h1 {
+    font-size: 42px; 
+    font-weight: 800;
+    letter-spacing: -1px; 
+    color: #ffffff;
+}
+
+.brand-name h1 span {
+    color: #ff4500; 
+}
+
+.nav-bar ul {
+    display: flex;
+    gap: 55px; 
+    list-style: none;
+    align-items: center; 
+}
+
+.nav-bar a {
+    text-decoration: none;
+    font-size: 20px; 
+    font-weight: 700; 
+    color: #cccccc;
+    letter-spacing: -0.2px;
+    transition: color 0.3s ease;
+}
+
+.nav-bar a:hover {
+    color: #ff4500;
+}
+.nav-bar a.active {
+    color: #ff4500;
+}
+
+.signin-out {
+    background-color: #161616; 
+    color: #ff4500;
+    border: 1px solid #262626;
+    padding: 14px 34px; 
+    border-radius: 12px; 
+    font-size: 16px; 
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.signin-out:hover {
+    background-color: #ff4500;
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
+/* ==========================================================================
+   3. HERO CONTAINER LAYOUT
+   ========================================================================== */
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    width: 100%;
+    height: 100vh;
+    padding: 150px 5% 30px 5%; 
+}
+
+/* ==========================================================================
+   4. HERO TITLE (Centered Massive Impact)
+   ========================================================================== */
+.hero-title {
+    width: 100%;
+    text-align: center; 
+    margin-bottom: 25px;
+}
+
+.hero-title h2 {
+    font-size: 86px; 
+    font-weight: 800;
+    line-height: 1.05; 
+    letter-spacing: -3px; 
+    text-transform: uppercase;
+}
+
+.hero-title h2 span {
+    color: #ff4500; 
+}
+
+/* ==========================================================================
+   5. FILTER TAGS BAR
+   ========================================================================== */
+.tags {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; 
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 35px;
+}
+
+.tag1 {
+    background-color: #111111;
+    color: #888888;
+    padding: 10px 24px;
+    border-radius: 24px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tag1:hover, 
+.tag1.active {
+    background-color: #ff4500;
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   6. CARDS ROW WRAPPER (Centered & Fixed Width Bound)
+   ========================================================================== */
+.card-wrapper {
+    display: flex !important;
+    flex-direction: row !important; 
+    justify-content: center !important; /* Centers the card array neatly */
+    align-items: stretch !important;    /* Makes sure all cards align down evenly */
+    width: 100% !important;         
+    max-width: 1300px;                  /* Binds horizontal space to keep columns tall */
+    gap: 32px !important; 
+    flex: 1 !important; 
+    margin-bottom: 25px;
+}
+
+/* ==========================================================================
+   7. INDIVIDUAL PREMIUM CARDS (Tall Rectangles: Height >> Width)
+   ========================================================================== */
+.card {
+    flex: 1 !important; 
+    display: flex !important;
+    flex-direction: column !important;
+    background-color: #0c0c0c; /* Deep rich dark card base like ScaleX */
+    border: 1px solid #1c1c1c;
+    border-radius: 32px; /* Super smooth rounded corners from your cat screenshot */
+    overflow: hidden;
+    max-width: 380px; /* Lock optimal desktop column width */
+    max-height: 520px; /* STRICT FIX: Heavy vertical limit making it a tall rectangle */
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: #ff4500;
+}
+
+/* STRICT STABLE SQUARE CONTAINER FILTER */
+.img {
+    width: 100%;
+    aspect-ratio: 1 / 1 !important; /* FORCES image container to be a mathematical flawless SQUARE */
+    background-color: #141414;
+    overflow: hidden;
+    border-bottom: 1px solid #1c1c1c;
+    border-radius: 16px;
+}
+
+.img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Fits any crop sizes inside the square frame beautifully */
+}
+
+/* Deep Roomy Card Text Layout */
+.card-content {
+    display: flex;
+    flex-direction: column;
+    padding: 30px; /* Generous breathing padding exactly like the ScaleX sample */
+    flex: 1;
+}
+
+.category {
+    background-color: rgba(255, 69, 0, 0.08); 
+    color: #ff4500;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    align-self: flex-start; 
+    margin-bottom: 16px;
+}
+
+.card-content h3 {
+    font-size: 24px; /* Big readable bold titles matching your screenshot */
+    font-weight: 700;
+    line-height: 1.35;
+    color: #ffffff;
+    margin-bottom: auto; /* Drives location footer dynamically to the absolute base */
+}
+
+.location {
+    font-size: 14px;
+    color: #555555;
+    font-weight: 600;
+    padding-top: 20px;
+}

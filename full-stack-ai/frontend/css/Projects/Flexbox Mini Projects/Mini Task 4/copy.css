@@ -1,0 +1,386 @@
+/* ==========================================================================
+   1. CORE RESET & VIEWPORT LOCK
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    background-color: #060505; 
+    color: #8f8883;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden; 
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 40px; 
+}
+
+/* ==========================================================================
+   2. MAIN CONTAINER
+   ========================================================================== */
+.container {
+    width: 100%;
+    max-width: 1280px; 
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 35px;
+}
+
+/* ==========================================================================
+   3. HEADER STYLES
+   ========================================================================== */
+.header {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: -5px;
+}
+
+.brand-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.8rem;
+    font-weight: 400;
+    color: #ffffff;
+    letter-spacing: 1px;
+}
+
+.separator-icon {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 5px;
+}
+
+.separator-icon::before,
+.separator-icon::after {
+    content: '';
+    height: 1px;
+    width: 60px;
+    background: linear-gradient(to right, transparent, #d96b27);
+}
+
+.separator-icon::after {
+    background: linear-gradient(to left, transparent, #d96b27);
+}
+
+/* ==========================================================================
+   4. MAIN CONTENT
+   ========================================================================== */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 30px;
+    min-height: 0;
+}
+
+/* --- DRINKS ROW --- */
+.drinks-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    flex: 1.3; 
+    min-height: 0;
+}
+
+.drink-card {
+    flex: 1;
+    background: linear-gradient(180deg, #120e0d 0%, #0d0a0a 100%);
+    border: 1.5px solid #1c1715;
+    border-radius: 24px;
+    padding: 25px 15px 25px 15px; 
+    text-align: center;
+    position: relative;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden; 
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.4s, box-shadow 0.4s;
+}
+
+.drink-card:hover {
+    transform: translateY(-6px);
+    border-color: #d96b27;
+    box-shadow: 0 15px 35px rgba(217, 107, 39, 0.1);
+}
+
+/* Signature Card Glow */
+.drink-card.featured {
+    border-color: #d96b27;
+    box-shadow: 0 0 30px rgba(217, 107, 39, 0.15), 
+                inset 0 0 20px rgba(217, 107, 39, 0.05);
+}
+
+/* 🌟 PERFECT MATCH TAG STYLING (New & Signature Same Look) 🌟 */
+.badge-signature, .badge-new {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 0.68rem;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 50px;
+    text-transform: capitalize; 
+    letter-spacing: 0.3px;
+    z-index: 10;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border: none; 
+}
+
+/* Signature Tag: Glowing Orange Capsule */
+.badge-signature {
+    color: #e28743;
+    background: rgba(217, 107, 39, 0.12);
+}
+
+/* New Tag: Exact Same Shape as Signature */
+.badge-new {
+    color: #e28743;
+    background: rgba(217, 107, 39, 0.12);
+}
+
+/* ==========================================================================
+   IMAGES ENGINE (Top Positioned & Scaled to Fill Black Gaps)
+   ========================================================================== */
+.drink-card img {
+    width: 100%;
+    height: 165px; 
+    object-fit: contain; 
+    
+    margin-top: 15px; /* ऊपर की तरफ पुश किया */
+    margin-bottom: auto; /* नीचे के टेक्स्ट ब्लॉक को नीचे धकेल दिया (No Overlap) */
+    
+    transform: scale(1.35); /* इमेज के अनचाहे ब्लैक स्पेस को क्रॉप करने के लिए */
+    filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.8));
+    transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* Hover Zoom Effect */
+.drink-card:hover img {
+    transform: scale(1.5); 
+}
+
+/* 🌟 Text Container Layout Block */
+.drink-info-block {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-top: 15px; 
+}
+
+.drink-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.55rem;
+    font-weight: 400;
+    color: #ffffff;
+}
+
+.drink-tag {
+    font-size: 0.85rem;
+    color: #706965; 
+    font-weight: 500;
+}
+
+.drink-price {
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: #e28743;
+    letter-spacing: 0.5px;
+    margin-top: 4px;
+}
+
+/* --- CHEF'S SPECIAL BANNER --- */
+.chef-special-banner {
+    flex: 1.1; 
+    background: linear-gradient(135deg, #110e0d 0%, #0a0808 100%);
+    border: 1.5px solid #1c1715;
+    border-radius: 24px;
+    padding: 35px 60px;
+    position: relative;
+    overflow: hidden;
+    min-height: 0;
+}
+
+.banner-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    height: 100%;
+}
+
+.food-image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    overflow: hidden;
+}
+
+.food-image-container img {
+    height: 240px; 
+    width: 240px;
+    object-fit: cover; 
+    border-radius: 50%;
+    transform: scale(1.2); 
+    filter: drop-shadow(0px 20px 35px rgba(0,0,0,0.8));
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.chef-special-banner:hover .food-image-container img {
+    transform: scale(1.32); 
+}
+
+.banner-text {
+    flex: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.subtitle {
+    color: #d96b27;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    margin-bottom: 8px;
+}
+
+.banner-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem; 
+    font-weight: 400;
+    color: #ffffff;
+    line-height: 1.15;
+    margin-bottom: 10px;
+}
+
+.banner-desc-title {
+    font-size: 1.1rem;
+    color: #bfaea3;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.banner-description {
+    font-size: 0.9rem;
+    color: #8f8883;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    max-width: 580px;
+}
+
+.explore-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    border: 1.5px solid #d96b27;
+    background: transparent;
+    padding: 12px 32px;
+    border-radius: 50px;
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.explore-btn:hover {
+    background-color: #d96b27;
+    box-shadow: 0 8px 20px rgba(217, 107, 39, 0.25);
+}
+
+.explore-btn .arrow {
+    transition: transform 0.3s;
+}
+
+.explore-btn:hover .arrow {
+    transform: translateX(6px);
+}
+
+/* ==========================================================================
+   5. FOOTER STYLES
+   ========================================================================== */
+.footer {
+    border-top: 1.5px solid #1c1715;
+    padding-top: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    color: #57514d;
+}
+
+.footer-nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.footer-nav a {
+    color: #8f8883;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.25s;
+}
+
+.footer-nav a:hover {
+    color: #ffffff;
+}
+
+.footer-nav .dot::before {
+    content: '·';
+    color: #d96b27;
+    font-size: 1.6rem;
+    line-height: 0;
+}
+
+.footer-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.social-icons a {
+    width: 32px;
+    height: 32px;
+    border: 1.5px solid #1c1715;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #8f8883;
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: all 0.3s;
+}
+
+.social-icons a:hover {
+    border-color: #d96b27;
+    color: #ffffff;
+    background-color: rgba(217, 107, 39, 0.1);
+}
