@@ -1,238 +1,307 @@
-/* ==========================================================================
-   1. GLOBAL RESET & BASE SETTINGS
-   ========================================================================== */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
+html,
 body {
-    background-color: #080300; /* Pure deep space black */
-    color: #ffffff;
-    font-family: 'Baloo 2', cursive;
-    height: 100vh;
-    width: 100vw;
-    overflow: hidden; /* Strict Screen Freeze - No scrollbars allowed */
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  color: white;
+}
+.header {
+  height: 12%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.brand-name {
+  font-size: 4rem;
+}
+.main-content {
+  height: 80%;
+  width: 100%;
+}
+.drinks-section {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  justify-content: center;
 }
 
-p, a, button, .tag1, .nav-bar a , .location, .category {
-    font-family: 'Plus Jakarta Sans', sans-serif;
+.drink-card {
+  height: 420px;
+  width: 250px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  background-color: #1a1a1a;
 }
 
-/* ==========================================================================
-   2. MAIN HEADER (ScaleX Premium Floating Navbar)
-   ========================================================================== */
-.main-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding: 40px 5%; 
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1000;
+.drink-card.featured {
+  border: 1px solid #ff6b35;
+  box-shadow: 0 0 25px rgba(255, 107, 53, 0.2);
 }
 
-.brand-name h1 {
-    font-size: 42px; 
-    font-weight: 800;
-    letter-spacing: -1px; 
-    color: #ffffff;
+.card-top {
+  height: 65%;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
 }
 
-.brand-name h1 span {
-    color: #ff4500; 
+.card-top img {
+  height: 100%;
+  width: 100%;
+  padding: 5px;
+  border-radius: 20px;
+  object-fit: cover;
 }
 
-.nav-bar ul {
-    display: flex;
-    gap: 55px; 
-    list-style: none;
-    align-items: center; 
+.badge-signature {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 1px solid #ff6b35;
+  color: #ff6b35;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
-.nav-bar a {
-    text-decoration: none;
-    font-size: 20px; 
-    font-weight: 700; 
-    color: #cccccc;
-    letter-spacing: -0.2px;
-    transition: color 0.3s ease;
+.badge-new {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #ff6b35;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
 }
 
-.nav-bar a:hover {
-    color: #ff4500;
-}
-.nav-bar a.active {
-    color: #ff4500;
-}
-
-.signin-out {
-    background-color: #161616; 
-    color: #ff4500;
-    border: 1px solid #262626;
-    padding: 14px 34px; 
-    border-radius: 12px; 
-    font-size: 16px; 
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.signin-out:hover {
-    background-color: #ff4500;
-    color: #ffffff;
-    border-color: #ffffff;
-}
-
-/* ==========================================================================
-   3. HERO CONTAINER LAYOUT
-   ========================================================================== */
-.hero-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    width: 100%;
-    height: 100vh;
-    padding: 150px 5% 30px 5%; 
-}
-
-/* ==========================================================================
-   4. HERO TITLE (Centered Massive Impact)
-   ========================================================================== */
-.hero-title {
-    width: 100%;
-    text-align: center; 
-    margin-bottom: 25px;
-}
-
-.hero-title h2 {
-    font-size: 86px; 
-    font-weight: 800;
-    line-height: 1.05; 
-    letter-spacing: -3px; 
-    text-transform: uppercase;
-}
-
-.hero-title h2 span {
-    color: #ff4500; 
-}
-
-/* ==========================================================================
-   5. FILTER TAGS BAR
-   ========================================================================== */
-.tags {
-    display: flex;
-    flex-direction: row;
-    justify-content: center; 
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 35px;
-}
-
-.tag1 {
-    background-color: #111111;
-    color: #888888;
-    padding: 10px 24px;
-    border-radius: 24px;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.tag1:hover, 
-.tag1.active {
-    background-color: #ff4500;
-    color: #ffffff;
-}
-
-/* ==========================================================================
-   6. CARDS ROW WRAPPER (Centered & Fixed Width Bound)
-   ========================================================================== */
-.card-wrapper {
-    display: flex !important;
-    flex-direction: row !important; 
-    justify-content: center !important; /* Centers the card array neatly */
-    align-items: stretch !important;    /* Makes sure all cards align down evenly */
-    width: 100% !important;         
-    max-width: 1300px;                  /* Binds horizontal space to keep columns tall */
-    gap: 32px !important; 
-    flex: 1 !important; 
-    margin-bottom: 25px;
-}
-
-/* ==========================================================================
-   7. INDIVIDUAL PREMIUM CARDS (Tall Rectangles: Height >> Width)
-   ========================================================================== */
-.card {
-    flex: 1 !important; 
-    display: flex !important;
-    flex-direction: column !important;
-    background-color: #0c0c0c; /* Deep rich dark card base like ScaleX */
-    border: 1px solid #1c1c1c;
-    border-radius: 32px; /* Super smooth rounded corners from your cat screenshot */
-    overflow: hidden;
-    max-width: 380px; /* Lock optimal desktop column width */
-    max-height: 520px; /* STRICT FIX: Heavy vertical limit making it a tall rectangle */
-    transition: transform 0.3s ease, border-color 0.3s ease;
-}
-
-.card:hover {
-    transform: translateY(-8px);
-    border-color: #ff4500;
-}
-
-/* STRICT STABLE SQUARE CONTAINER FILTER */
-.img {
-    width: 100%;
-    aspect-ratio: 1 / 1 !important; /* FORCES image container to be a mathematical flawless SQUARE */
-    background-color: #141414;
-    overflow: hidden;
-    border-bottom: 1px solid #1c1c1c;
-    border-radius: 16px;
-}
-
-.img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Fits any crop sizes inside the square frame beautifully */
-}
-
-/* Deep Roomy Card Text Layout */
 .card-content {
-    display: flex;
-    flex-direction: column;
-    padding: 30px; /* Generous breathing padding exactly like the ScaleX sample */
-    flex: 1;
-}
-
-.category {
-    background-color: rgba(255, 69, 0, 0.08); 
-    color: #ff4500;
-    font-size: 11px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    padding: 6px 14px;
-    border-radius: 20px;
-    align-self: flex-start; 
-    margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 4px;
+  text-align: center;
+  color: #fff;
 }
 
 .card-content h3 {
-    font-size: 24px; /* Big readable bold titles matching your screenshot */
-    font-weight: 700;
-    line-height: 1.35;
-    color: #ffffff;
-    margin-bottom: auto; /* Drives location footer dynamically to the absolute base */
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 0;
 }
 
-.location {
-    font-size: 14px;
-    color: #555555;
-    font-weight: 600;
-    padding-top: 20px;
+.card-content p {
+  font-size: 1rem;
+  color: #aaa;
+  margin: 0;
+}
+
+.drink-price {
+  text-align: center;
+  padding: 12px;
+  position: relative;
+  width: 100%;
+  margin-top: auto;
+}
+
+.drink-price::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 2px;
+  background-color: #ff6b35;
+}
+
+.drink-price p {
+  color: #ff6b35;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+.chef-special-banner {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.banner-pizza-llustration {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.15;
+  z-index: 0;
+  padding: 0px 20px;
+  width: 300px;
+}
+
+.banner-pizza-llustration img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
+}
+
+.banner-content {
+  height: 35%;
+  width: 55%;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  background-color: #1a1a1a;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.food-image-container {
+  flex-shrink: 0;
+  width: 260px;
+}
+
+.food-image-container img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  border-radius: 10px;
+}
+
+.banner-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.subtitle {
+  color: #ff6b35;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.banner-title {
+  font-size: 2.4rem;
+  color: #fff;
+  font-weight: 600;
+  margin: 0;
+}
+
+.banner-desc-title {
+  color: #d0d0d0;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.banner-description {
+  color: #999;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  max-width: 480px;
+  margin: 0;
+}
+
+.explore-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  padding: 12px 24px;
+  margin-top: 10px;
+  background: transparent;
+  border: 1px solid #ff6b35;
+  color: #ff6b35;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.explore-btn:hover {
+  background-color: #ff6b35;
+  color: #141414;
+}
+
+.explore-btn .arrow {
+  font-size: 1.1rem;
+}
+.footer{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 60px;
+  color: #999;
+  font-size: 0.9rem;
+}
+
+.footer-left{
+  color: #999;
+}
+
+.footer-nav{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer-nav a{
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-nav a:hover{
+  color: #ff6b35;
+}
+
+.footer-nav .dot{
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #666;
+}
+
+.footer-right{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.social-icons{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.social-icons a{
+  color: #ccc;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover{
+  color: #ff6b35;
 }
