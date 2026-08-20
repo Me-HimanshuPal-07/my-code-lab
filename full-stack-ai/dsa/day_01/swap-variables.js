@@ -1,7 +1,13 @@
 // Swap two variables via 3 methods
 
-let a = 20;
-let b = 40;
+const fs = require("fs");
+
+const input = fs.readFileSync(0, "utf-8");
+
+const value = input.trim().split(" ");
+
+let a = Number(value[0]);
+let b = Number(value[1]);
 
 //method 01: Swap two variables using extra variables
 // let extraVar ;
@@ -16,6 +22,6 @@ let b = 40;
 // a = a-b; // b is now 20, 60-20 = 40
 
 // Method 3: Swap two varibles using array method
-[a, b] = [b, a];
-console.log(`a : ${a}`);
-console.log(`b : ${b}`);
+// [a, b] = [b, a];
+// console.log(`a : ${a}`);
+// console.log(`b : ${b}`);
