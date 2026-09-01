@@ -1,0 +1,187 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Scoutie+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+body {
+  padding: 12px;
+  font-family: "Roboto", sans-serif;
+}
+.hero {
+  height: 100%;
+  width: 100%;
+  background-image: url("https://sharppc.ca/images/solutions-meeting-sharp-and-associates.webp");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.28);
+  border-radius: 20px;
+  z-index: 0;
+}
+.nav-header {
+  height: 90px;
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px;
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.logo {
+  height: 70%;
+  width: 14%;
+  padding: 0 10px;
+  overflow: hidden;
+}
+.logo img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+.nav-links {
+  height: 70%;
+  width: 40%;
+}
+.nav-links ul {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  font-family: "Scoutie Sans", sans-serif;
+  font-weight: 400;
+}
+
+.nav-right {
+  height: 100%;
+  width: 16%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.search-btn {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border: none;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.contact-btn {
+  height: 100%;
+  width: 68%;
+  border-radius: 50px;
+  border: none;
+  background-color: rgb(212, 255, 125);
+  cursor: pointer;
+}
+
+.hero-content {
+  height: 80%;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 25px 18px;
+  gap: 14px;
+  margin-top: 100px;
+  z-index: 0;
+}
+.hero-content h1 {
+  font-size: 3.5rem;
+  font-weight: 400;
+  word-spacing: 14px;
+  line-height: 3.5rem;
+  letter-spacing: 3px;
+  color: white;
+  font-family: "Scoutie Sans", sans-serif;
+}
+.hero-content h1 span{
+  display: inline-block;
+  height: 2px;
+  width: 160px;
+  vertical-align: middle;
+  margin-left: -20px;
+  background-color:rgb(212, 255, 125);
+}
+.consultation-btn{
+  height: 50px;
+  width: 200px;
+  border-radius: 50px;
+  background-color: rgb(212, 255, 125);
+  border: none;
+  cursor: pointer;
+}
+.consultation-arrow-btn{
+  height: 50px;
+  width: 55px;
+  border-radius: 50%;
+  background-color: rgb(212, 255, 125);
+  font-size: 1.2rem;
+  margin-left: -6px;
+  border: none;
+  cursor: pointer;
+}
+.status-bar {
+  height: 10%;
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  z-index: 0;
+}
+.stat-card {
+  height: 100%;
+  width: 32%;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 20px;
+  padding: 16px 0px 0px 16px;
+  cursor : pointer;
+}
+.stat-card:first-child {
+  background-color: white;
+}
+.stat-card a {
+  color: black;
+  font-size: 0.8rem;
+}
