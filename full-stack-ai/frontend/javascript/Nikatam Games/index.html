@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Nikatam Games - Dost Paas, Khel Bindass.</title>
+    <!-- Baloo 2 Integration -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Ambient glowing backgrounds to give a modern depth -->
+    <div class="ambient-glow glow-1"></div>
+    <div class="ambient-glow glow-2"></div>
+
+    <div class="dashboard-layout">
+        
+        <!-- 🧭 GLASS SIDEBAR NAVIGATION -->
+        <nav class="glass-sidebar">
+            <div class="brand-zone">
+                <h1 class="logo-text">Nikatam<span>.</span></h1>
+                <p class="tagline">Dost Paas, Khel Bindass.</p>
+            </div>
+            
+            <div class="nav-links">
+                <a href="#" class="nav-item active"><span class="icon">🎮</span> All Games</a>
+                <a href="#" class="nav-item upcoming-nav"><span class="icon">🏆</span> Leaderboards</a>
+                <a href="#" class="nav-item upcoming-nav"><span class="icon">⚙️</span> Settings</a>
+            </div>
+
+            <!-- Global User Meta Widget -->
+            <div class="user-meta-widget">
+                <div class="avatar-zone">⭐</div>
+                <div class="user-details">
+                    <h4 id="user-name-display">Loading...</h4>
+                    <span id="platform-coins">🪙 0 XP</span>
+                </div>
+                <button id="edit-profile-btn" title="Change Name">✏️</button>
+            </div>
+        </nav>
+
+        <!-- 🕹️ MAIN CONTENT PANEL -->
+        <main class="main-content-panel">
+            
+            <!-- Hero Spotlight Banner -->
+            <section class="spotlight-banner">
+                <div class="banner-overlay"></div>
+                <div class="banner-content">
+                    <span class="category-tag">✨ HOT MULTIPLAYER</span>
+                    <h2>2-Player Guess Match Live Now!</h2>
+                    <p>Apne doston ke sath local pass & play match ka maza lein. Secret sankhya set karein aur dimaag lagayein.</p>
+                    <a href="games/guess-match/game.html" class="play-now-cta">Launch Game 🚀</a>
+                </div>
+            </section>
+
+            <!-- Grid Catalogue Section -->
+            <section class="catalogue-section">
+                <div class="section-header">
+                    <h3 class="panel-heading">🎮 Games Library</h3>
+                    <div class="filter-tabs">
+                        <span class="tab active">All</span>
+                        <span class="tab">Local Party</span>
+                        <span class="tab">Mind Games</span>
+                    </div>
+                </div>
+
+                <div class="games-grid">
+                    
+                    <!-- Game Card 1: Live Game -->
+                    <a href="games/guess-match/game.html" class="game-card live-card">
+                        <div class="card-glass-base"></div>
+                        <div class="card-visual">🎯</div>
+                        <div class="card-body">
+                            <span class="status-indicator live">● PLAY NOW</span>
+                            <h3>2-Player Guess Match</h3>
+                            <p>Local match tracking dynamic guess engines ke sath.</p>
+                        </div>
+                    </a>
+
+                    <!-- Game Card 2: Placeholder -->
+                    <div class="game-card disabled-card">
+                        <div class="card-glass-base"></div>
+                        <div class="card-visual">🎲</div>
+                        <div class="card-body">
+                            <span class="status-indicator upcoming">COMING SOON</span>
+                            <h3>Ludo Sprint</h3>
+                            <p>Classic ludo ka fast-paced modern hyper format.</p>
+                        </div>
+                    </div>
+
+                    <!-- Game Card 3: Placeholder -->
+                    <div class="game-card disabled-card">
+                        <div class="card-visual">⚔️</div>
+                        <div class="card-body">
+                            <span class="status-indicator upcoming">COMING SOON</span>
+                            <h3>Tic-Tac-Toe Pro</h3>
+                            <p>Advanced strategic matrices aapki quick testing ke liye.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="platform.js"></script>
+</body>
+</html>

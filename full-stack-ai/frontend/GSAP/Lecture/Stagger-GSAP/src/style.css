@@ -1,0 +1,27 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body{
+  height: 100%;
+  width: 100%;
+  background-color: black;
+}
+/*STAGGER*/
+.container{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.box{
+  height: 200px;
+  width: 200px;
+  background-color: brown;
+  font-size: 50px;
+  font-weight: 600px;
+  padding: 50px;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border-radius: 10px;
+}

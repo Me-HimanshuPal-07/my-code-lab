@@ -1,0 +1,15 @@
+// Accept values of p,r,t and calculate CI = Amount - p, amount = p*(1 + r/100)^t.
+
+const fs = require("fs");
+
+const input = fs.readFileSync(0, "utf-8");
+
+const value = input.trim().split(" ");
+
+const p = Number(value[0]);
+const r = Number(value[1]);
+const t = Number(value[2]);
+
+const amount = p* Math.pow((1 + r/100), t);
+const CI = amount - p;
+console.log(CI.toFixed(0));

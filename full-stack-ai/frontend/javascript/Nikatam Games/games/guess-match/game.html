@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>2-Player Guess Match - Nikatam Games</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="game.css">
+</head>
+<body>
+
+    <div class="app-wrapper">
+        <div class="nav-bar">
+            <a href="../../index.html" class="back-link">⬅️ Back to Home</a>
+        </div>
+
+        <main class="main-card">
+            <div id="setup-screen" class="screen-view">
+                <h2 class="section-title">🎯 2-Player Guess Match</h2>
+                <p class="section-desc">Players ka naam aur secret number set karein!</p>
+                
+                <div class="input-stack">
+                    <div class="field-group">
+                        <input type="text" id="p1-name" required placeholder=" ">
+                        <label>Player 1 Naam (Guesser)</label>
+                    </div>
+                    <div class="field-group">
+                        <input type="text" id="p2-name" required placeholder=" ">
+                        <label>Player 2 Naam (Secret Setter)</label>
+                    </div>
+                    <div class="field-group">
+                        <input type="password" id="custom-secret" inputmode="numeric" required placeholder=" ">
+                        <label>Secret Number (1 - 100)</label>
+                    </div>
+                </div>
+                <button id="start-game-btn" class="primary-btn">🚀 Khel Shuru Karo</button>
+            </div>
+
+            <div id="gameplay-screen" class="screen-view hidden">
+                <h2 id="turn-indicator" class="section-title">Player 1 Turn</h2>
+                
+                <div class="stats-grid">
+                    <div id="p1-badge" class="stat-badge active">
+                        <span class="p-name">P1</span>
+                        <span class="p-count">0 Att.</span>
+                    </div>
+                    <div id="p2-badge" class="stat-badge">
+                        <span class="p-name">P2</span>
+                        <span class="p-count">0 Att.</span>
+                    </div>
+                </div>
+
+                <div id="hint-message" class="status-msg status-normal">Apna pehla guess lagao!</div>
+
+                <div class="action-row">
+                    <input type="number" id="user-input" inputmode="numeric" placeholder="Guess likho...">
+                    <button id="check-btn" class="action-btn">Check</button>
+                </div>
+
+                <button id="restart-btn" class="secondary-btn hidden">🔄 Naya Game Khelein</button>
+            </div>
+        </main>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>

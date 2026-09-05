@@ -1,0 +1,21 @@
+/* Purani files ke body ko isse replace kijiye taaki platform sync cohesive dikhe */
+body {
+    background-color: #f1f5f9;
+    background-image: radial-gradient(at top left, #bfdbfe, transparent 50%), radial-gradient(at bottom right, #fed7aa, transparent 50%);
+    color: #0f172a;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+}
+
+.main-card {
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.04);
+}
