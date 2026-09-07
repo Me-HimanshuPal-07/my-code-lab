@@ -16,4 +16,5 @@ router.get("/:id", getNotesController); //Read one
 router.put("/:id", updatedNotesController); //Update via put
 router.patch("/:id", singleEntityUpdateController); //update via patch
 router.delete("/:id", deleteNoteController); //delete
+
 module.exports = router;
