@@ -9,12 +9,12 @@ app.use(
     origin: "http://localhost:5173",
   }),
 );
+app.use("/notes", notesRoute);
 connectDB();
 
 app.get("/", (req, res) => {
   res.end("Hello, We are here.");
 });
 
-app.use("/notes", notesRoute);
 
 module.exports = app;
