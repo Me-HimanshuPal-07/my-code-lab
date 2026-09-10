@@ -1,10 +1,9 @@
 const userProfile = (req, res)=>{
     try {
-        console.log("✅ Route reached");
         const body = req.body;
-        const file = req.file;
+        const files = req.files;
         console.log(body);
-        console.log(file);
+        console.log(files);
 
         return res.status(201).json({
             message: "Profile Created successfuly",
