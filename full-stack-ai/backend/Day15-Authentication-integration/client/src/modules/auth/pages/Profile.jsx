@@ -10,7 +10,7 @@ const Profile = () => {
 
     async function fetchProfile() {
 
-        const response = await api.get("/auth/me")
+        const response = await api.get("/auth/profile")
 
         authContext.setUser(response.data.data.user)
 
