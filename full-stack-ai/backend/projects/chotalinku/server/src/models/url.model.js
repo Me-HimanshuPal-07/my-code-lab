@@ -8,7 +8,7 @@ const urlSchema = new mongoose.Schema(
       trim: true,
       maxLength: 2048,
     },
-    shortUrl: {
+    shortCode: {
       type: String,
       required: true,
       unique: true,
@@ -21,6 +21,4 @@ const urlSchema = new mongoose.Schema(
   { timestamps: true },
 );
 
-const urlModel = mongoose.model("url", urlSchema);
-
-export default urlModel;
+export const urlModel = mongoose.model("url", urlSchema);
