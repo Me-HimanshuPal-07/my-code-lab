@@ -40,19 +40,20 @@ export const getUrls = async (req, res, next) => {
   try {
     const urls = await urlModel.find().lean();
 
-    if (!urls) {
-      return res.status(200).json({
-        message: "urls fetch successfuly.",
-        data: {
-          urls,
-        },
+    if (urls == "") {
+      return res.status(404).json({
+        message: "No URLs exist.",
       });
     }
 
-    return res.status(404).json({
-      message: "No URLs exist.",
+    return res.status(200).json({
+      message: "urls fetch successfuly.",
+      data: {
+        urls,
+      },
     });
   } catch (err) {
     next(err);
   }
 };
+
