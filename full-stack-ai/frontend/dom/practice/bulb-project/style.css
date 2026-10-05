@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  background-color: rgb(29, 27, 27);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.top-div {
+  height: 10%;
+  width: 70%;
+  background-color: burlywood;
+  border-radius: 20px;
+  border: 1px dashed rgb(43, 3, 3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bulbHeading{
+font-size: 2rem;
+font-weight: 500;
+color: rgb(52, 5, 5);
+}
+
+.bulb-card{
+  height: 60%;
+  width: 70%;
+  background-color: beige;
+  border-radius: 20px;
+  border: 1px dashed rgb(43, 3, 3);
+  display: flex;
+  padding: 50px;
+  align-items: center;
+  justify-content: center;
+  gap: 40%;
+}
+
+.bulb{
+  height: 400px;
+  width: 400px;
+  background-color: rgb(98, 95, 95);
+  border-radius: 50%;
+  border: 5px solid rgb(20, 17, 17);
+
+}
+
+.btn {
+  padding: 20px 60px;
+  font-size: 30px;
+  font-weight: 700;
+  background-color: rgb(100, 148, 28);
+  border-radius: 20px;
+  border-style: none;
+  color: azure;
+  cursor: pointer;
+}
+
+.bulb-on {
+  background-color: yellow;
+}
+
+.btn-off {
+  background-color: red;
+}
